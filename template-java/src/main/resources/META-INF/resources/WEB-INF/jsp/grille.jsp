@@ -7,15 +7,36 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Insert title here</title>
-
-    <table>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    </table>
-
+    <link rel="stylesheet" type="text/css"
+            href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css"
+        href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
-<p>
-DO YOUR JSP CODE HERE :D
-</p>
+
+<%
+    String result="<table>";
+
+            for(int i=0; i<8; i++) {
+                result += "<tr>";
+
+                for (int j = 0; j < 8; j++) {
+                    result += "<td";
+
+                    if (request.getAttribute("Grille").getGrille()[i][j] == -1)
+                        result += " class=\"white\"";
+                    else if (request.getAttribute("Grille").getGrille()[i][j] == 1)
+                        result += " class=\"black\"";
+                    result += "></td>";
+                }
+                result += "</tr>";
+            }
+
+            result += "</table>";
+%>
+
+${result}
+
+
 </body>
 </html>
