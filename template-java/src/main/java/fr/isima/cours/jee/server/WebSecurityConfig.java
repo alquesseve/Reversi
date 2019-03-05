@@ -21,6 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     request.getSession().setAttribute("username", authentication.getName());
                     response.sendRedirect("/main");
                 }).permitAll();
+        http.csrf().disable();
     }
 
     @Autowired
