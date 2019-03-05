@@ -17,6 +17,8 @@ public class Game {
 
     @GetMapping
     public ModelAndView displayGrille(){
+        grille = new Grille();
+
         return new ModelAndView("grille", "Grille", grille);
     }
 

@@ -12,6 +12,11 @@ public class Grille {
                 grille[i][j] = 0;
             }
         }
+
+        grille[3][3] = -1;
+        grille[4][4] = -1;
+        grille[3][4] = 1;
+        grille[4][3] = 1;
     }
 
     public int[][] getGrille(){
