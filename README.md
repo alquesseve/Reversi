@@ -5,5 +5,6 @@
 - Spring Initializr
 - pgAdmin pour gérer PostGre
 - thymeleaf pour remplacer les jsp
+- vérifier csrf dans fichier WebSecurity
 
 Connecter deux joueurs
