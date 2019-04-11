@@ -6,6 +6,9 @@ L’application utilise Spring Boot MVC. Le moteur de template utilisé est thym
 Ce projet n’est pas dans une version utilisable et reste inachevé.
 
 
+comptes utilisateurs : user1, user2 / mot de passe commun : reversi
+
+
 ## Principe de l’application :
 
 Le principe est relativement simple: un utilisateur se connecte sur la page d'accueil, il est ensuite redirigé vers une page listant les membres connectés. Dès qu'il se retrouve connecté, il apparaît alors comme prêt à jouer sur l'interface des autres joueurs. La liste qui regroupe tous ces joueurs est rafraîchie périodiquement via un appel réseau AJAX.
