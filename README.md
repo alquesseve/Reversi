@@ -1,6 +1,6 @@
 # Dossier explicatif : Application Reversi
 
-L’application utilise Spring Boot MVC. Le moteur de template utilise est thymeleaf.
+L’application utilise Spring Boot MVC. Le moteur de template utilisé est thymeleaf.
 
 
 Ce projet n’est pas dans une version utilisable et reste inachevé.
@@ -15,6 +15,17 @@ Lors du clic sur un membre de la liste, une partie se crée entre les deux joueu
 
 
 Une fois que le joueur a joué son tour, il doit attendre que le deuxième joueur se synchronise (récupère la grille mise à jour) et joue.
+
+
+## Technique :
+
+Nous avons utilisé le système de base de données H2. 
+
+
+Un utilisateur user1 se connecte à l'application. Au moment de l'établissement de la session, son statut est mis à jour en base de données pour signifier qu'il est en attente de partie. Il doit alors attendre qu'un autre utilisateur se connecte. Il atterit sur la page listant les membres connectés. Cette page fait un appel réseau via AJAX toutes les 10 secondes pour récupérer la liste des utilisateurs mise à jour. Lors du clic sur un utilisateur de cette liste (user2), une partie est créée. La partie est stockée en base de données dès sa création. L'utilisateur user1 sera  le joueur qui va commencer à jouer (choix arbitraire, on aurait très bien pû utiliser un système aléatoire). Le joueur user1 va donc cliquer sur une case et déclencher un événement javascript. Cet événement va réaliser un appel réseau pour vérifier que le coup est possible côté serveur. Si c'est le cas, le coup est alors pris en compte. Du côté du joueur user2, la grille est rechargée par appel réseau via AJAX toutes les 10 secondes. Une fois que le coup du joueur user1 est validé, c'est à son tour de jouer. 
+
+
+Comme annoncé en préambule, ce projet est dans un état inachevé. La logique de jeu est terminée, cependant la jonction entre le front end et cette logique est en chantier. En effet, les fonctions et événements javascript ne sont pas développés (ils sont en état d'ébauche par manque de temps, cf points de blocage). De même la logique côté serveur n'est pas terminée.
 
 
 ## Points de blocage :
