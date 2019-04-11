@@ -5,8 +5,10 @@
 <body>
 <div class="container">
     <div class="jumbotron">
+        <h1>Play a game</h1>
+
         <div class="btn-group" role="group">
-            <table class="grille">
+            <table>
                 <tr th:each="line : ${Grille}">
                     <td th:each="cell : ${line.getLine()}" th:classappend="${cell.value} > 0 ? black : (${cell.value} < 0 ? white : '')" onclick="play(${cell.line}, ${cell.column});"></td>
                 </tr>
@@ -14,4 +16,5 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" th:src="@{/js/logic.js}"></script>
 </html>

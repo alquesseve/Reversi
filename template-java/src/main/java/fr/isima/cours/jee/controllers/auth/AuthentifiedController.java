@@ -1,6 +1,6 @@
-package fr.isima.cours.jee.controllers.auth;
+package fr.isima.cours.jee.server.controllers.auth;
 
-import fr.isima.cours.jee.controllers.auth.User;
+import fr.isima.cours.jee.server.controllers.auth.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

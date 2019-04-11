@@ -1,10 +1,3 @@
-# Reversi
+# Template
 
-- Lier le repo à Heroku
-- Heroku Postgres -> H2
-- Spring Initializr
-- pgAdmin pour gérer PostGre
-- thymeleaf pour remplacer les jsp
-- vérifier csrf dans fichier WebSecurity
-
-Connecter deux joueurs
+Vous trouverez ici un template pour ecrire des projets avec des jsp en Kotlin comme en Java

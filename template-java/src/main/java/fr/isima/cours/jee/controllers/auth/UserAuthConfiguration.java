@@ -1,4 +1,4 @@
-package fr.isima.cours.jee.controllers.auth;
+package fr.isima.cours.jee.server.controllers.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

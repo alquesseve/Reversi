@@ -2,24 +2,26 @@ package fr.isima.cours.jee.business;
 
 public class Grille {
 
-    private int grille[][];
+    private Line grille[];
 
     public Grille() {
-        grille = new int[8][8];
+        grille = new Line[8];
 
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                grille[i][j] = 0;
-            }
+            grille[i] = new Line(i);
         }
 
-        grille[3][3] = -1;
-        grille[4][4] = -1;
-        grille[3][4] = 1;
-        grille[4][3] = 1;
+        grille[3].setCell(3,-1);
+        grille[4].setCell(4,-1);
+        grille[3].setCell(4,1);
+        grille[4].setCell(3, 1);
     }
 
-    public int[][] getGrille(){
+    public Line[] getGrille(){
         return grille;
+    }
+
+    public Cell getCell(int x, int y){
+        return grille[x].getCell(y);
     }
 }
